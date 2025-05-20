@@ -1,3 +1,5 @@
+import tinycolor2 from "tinycolor2";
+
 export type ColorKey =
 	| "bg0_hard"
 	| "bg0_medium"
@@ -107,6 +109,33 @@ type IntRange<F extends number, T extends number> = Exclude<
 	Enumerate<T>,
 	Enumerate<F>
 >;
+
+
+	const MonoboxColors = {
+		red: "#ff6188",
+		orange: "#fc9867",
+		yellow: "#ffd866",
+		green: "#a9dc76",
+		blue: "#78dce8",
+		purple: "#ab9df2",
+		white: "#f8f8f2",
+		black: "#333333",
+	};
+
+const _setColor = () => {
+	allColors.dark.white = "#F5F0E6";
+	allColors.dark.blue1 = "#456E8A";
+	allColors.dark.blue2 = "#6F9EBD";
+};
+
+const _setSaturate = () => {
+	const dark = allColors.dark;
+	for (const k in dark) {
+		dark[k] = tinycolor2(dark[k]).saturate(8).toHexString();
+	}
+};
+_setColor();
+_setSaturate();
 
 export const withAlpha = (color: `#${string}`, alpha: IntRange<0, 256>) => {
 	return `${color}${alpha.toString(16).padStart(2, "0")}`;

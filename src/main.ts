@@ -21,6 +21,7 @@ import { getSemanticColors } from "./semantic-colors";
 import { getBaseColors } from "./colors/base";
 import { getJupyterNotebookColors } from "./colors/extensions/jupyter-notebook";
 import { getGitLensColors } from "./colors/extensions/gitlens";
+import { getVscodeModernColors } from "./colors/modern/modern";
 
 const variants: Array<[ColorScheme, ColorContrast]> = [
 	["dark", "hard"],
@@ -60,9 +61,10 @@ const generateJson = (scheme: ColorScheme, contrast: ColorContrast) => {
 			...getLatexColors(scheme, contrast),
 		],
 		colors: {
-			...getBaseColors(scheme, contrast),
-			...getJupyterNotebookColors(scheme, contrast),
-			...getGitLensColors(scheme, contrast),
+			//...getBaseColors(scheme, contrast),
+			//...getJupyterNotebookColors(scheme, contrast),
+			//...getGitLensColors(scheme, contrast),
+			...getVscodeModernColors()
 		},
 		semanticTokenColors: getSemanticColors(scheme),
 	};

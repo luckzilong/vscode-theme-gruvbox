@@ -1,26 +1,31 @@
 {
 	"name": "gruvbox",
-	"displayName": "Gruvbox Theme",
-	"description": "Gruvbox Theme",
 	"version": "0.0.0",
-	"author": "jdinhify (https://github.com/jdinhify)",
-	"publisher": "jdinhlife",
-	"engines": {
-		"vscode": "^1.67.2"
+	"author": "luzilong",
+	"repository": {
+		"type": "github",
+		"url": "https://github.com/luckzilong/vscode-theme-gruvbox.git"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.21.0",
+		"@types/node": "^22.13.7",
+		"@types/tinycolor2": "^1.4.6",
+		"@vscode/vsce": "^3.2.2",
+		"es-toolkit": "^1.37.2",
+		"eslint": "^9.21.0",
+		"eslint-config-prettier": "^10.0.2",
+		"ovsx": "^0.10.1",
+		"prettier": "3.5.2",
+		"semantic-release": "^24.2.3",
+		"tinycolor2": "^1.6.0",
+		"tsx": "^4.19.3",
+		"typescript": "^5.7.3",
+		"typescript-eslint": "^8.25.0",
+		"vsce": "^2.15.0"
 	},
 	"categories": [
 		"Themes"
 	],
-	"icon": "images/icon.png",
-	"galleryBanner": {
-		"color": "#3c3836",
-		"theme": "dark"
-	},
-	"homepage": "https://github.com/jdinhify/vscode-theme-gruvbox",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/jdinhify/vscode-theme-gruvbox.git"
-	},
 	"contributes": {
 		"themes": [
 			{
@@ -55,25 +60,20 @@
 			}
 		]
 	},
-	"__metadata": {
-		"id": "c6d564c4-ca8c-45ba-abf6-c85f2d1468d8",
-		"publisherDisplayName": "jdinhify",
-		"publisherId": "571210a8-f372-43c2-8b5a-018868d4ac96"
+	"description": "Gruvbox Theme. source author jdinhify (https://github.com/jdinhify), repository https://github.com/jdinhify/vscode-theme-gruvbox.git",
+	"displayName": "Gruvbox Theme",
+	"engines": {
+		"vscode": "^1.67.2"
 	},
-	"devDependencies": {
-		"@eslint/js": "^9.21.0",
-		"@types/node": "^22.13.7",
-		"@vscode/vsce": "^3.2.2",
-		"eslint": "^9.21.0",
-		"eslint-config-prettier": "^10.0.2",
-		"ovsx": "^0.10.1",
-		"prettier": "3.5.2",
-		"semantic-release": "^24.2.3",
-		"tsx": "^4.19.3",
-		"typescript": "^5.7.3",
-		"typescript-eslint": "^8.25.0"
+	"galleryBanner": {
+		"color": "#3c3836",
+		"theme": "dark"
 	},
+	"homepage": "https://github.com/luckzilong/vscode-theme-gruvbox",
+	"icon": "images/icon.png",
+	"license": "MIT",
 	"private": true,
+	"publisher": "luzilong",
 	"scripts": {
 		"semantic-release": "semantic-release",
 		"dev": "tsx watch ./src/main.ts",
@@ -82,6 +82,5 @@
 		"lint:check": "eslint ./src",
 		"format:check": "prettier ./src --check"
 	},
-	"license": "MIT",
 	"type": "module"
 }
