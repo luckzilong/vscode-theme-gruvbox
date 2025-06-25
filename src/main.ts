@@ -21,6 +21,7 @@ import { getSemanticColors } from "./semantic-colors";
 import { getBaseColors } from "./colors/base";
 import { getJupyterNotebookColors } from "./colors/extensions/jupyter-notebook";
 import { getGitLensColors } from "./colors/extensions/gitlens";
+import { getVSCodeColors } from "./colors/vscode/VSCodeColors";
 
 const variants: Array<[ColorScheme, ColorContrast]> = [
 	["dark", "hard"],
@@ -37,8 +38,9 @@ const getName = (scheme: ColorScheme, contrast: ColorContrast) =>
 const generateJson = (scheme: ColorScheme, contrast: ColorContrast) => {
 	return {
 		$schema: "vscode://schemas/color-theme",
-		name: getName(scheme, contrast),
-		type: scheme,
+		// name: getName(scheme, contrast),
+		name:"Gruvbox Dark",
+    type: scheme,
 		semanticHighlighting: true,
 		tokenColors: [
 			...getBaseTokenColors(scheme, contrast),
@@ -60,9 +62,10 @@ const generateJson = (scheme: ColorScheme, contrast: ColorContrast) => {
 			...getLatexColors(scheme, contrast),
 		],
 		colors: {
-			...getBaseColors(scheme, contrast),
-			...getJupyterNotebookColors(scheme, contrast),
-			...getGitLensColors(scheme, contrast),
+			//...getBaseColors(scheme, contrast),
+			//...getJupyterNotebookColors(scheme, contrast),
+			//...getGitLensColors(scheme, contrast),
+      ...getVSCodeColors(scheme, contrast)
 		},
 		semanticTokenColors: getSemanticColors(scheme),
 	};
@@ -72,7 +75,7 @@ const run = async () => {
 	await Promise.all(
 		variants.map(async ([scheme, contrast]) =>
 			promises.writeFile(
-				`./themes/gruvbox-${scheme}-${contrast}.json`,
+				`./themes/gruvbox-dark.json`,
 				JSON.stringify(generateJson(scheme, contrast), undefined, "\t"),
 			),
 		),

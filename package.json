@@ -1,10 +1,10 @@
 {
 	"name": "gruvbox",
 	"displayName": "Gruvbox Theme",
-	"description": "Gruvbox Theme",
+	"description": "Gruvbox Theme, Source author: jdinhify (https://github.com/jdinhify)",
 	"version": "0.0.0",
-	"author": "jdinhify (https://github.com/jdinhify)",
-	"publisher": "jdinhlife",
+	"author": "luzilong",
+	"publisher": "luzilong",
 	"engines": {
 		"vscode": "^1.67.2"
 	},
@@ -24,41 +24,11 @@
 	"contributes": {
 		"themes": [
 			{
-				"label": "Gruvbox Dark Medium",
+				"label": "Gruvbox Dark",
 				"uiTheme": "vs-dark",
-				"path": "./themes/gruvbox-dark-medium.json"
-			},
-			{
-				"label": "Gruvbox Dark Hard",
-				"uiTheme": "vs-dark",
-				"path": "./themes/gruvbox-dark-hard.json"
-			},
-			{
-				"label": "Gruvbox Dark Soft",
-				"uiTheme": "vs-dark",
-				"path": "./themes/gruvbox-dark-soft.json"
-			},
-			{
-				"label": "Gruvbox Light Medium",
-				"uiTheme": "vs",
-				"path": "./themes/gruvbox-light-medium.json"
-			},
-			{
-				"label": "Gruvbox Light Hard",
-				"uiTheme": "vs",
-				"path": "./themes/gruvbox-light-hard.json"
-			},
-			{
-				"label": "Gruvbox Light Soft",
-				"uiTheme": "vs",
-				"path": "./themes/gruvbox-light-soft.json"
+				"path": "./themes/gruvbox-dark.json"
 			}
 		]
-	},
-	"__metadata": {
-		"id": "c6d564c4-ca8c-45ba-abf6-c85f2d1468d8",
-		"publisherDisplayName": "jdinhify",
-		"publisherId": "571210a8-f372-43c2-8b5a-018868d4ac96"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.21.0",
@@ -71,7 +41,8 @@
 		"semantic-release": "^24.2.3",
 		"tsx": "^4.19.3",
 		"typescript": "^5.7.3",
-		"typescript-eslint": "^8.25.0"
+		"typescript-eslint": "^8.25.0",
+		"vsce": "^2.15.0"
 	},
 	"private": true,
 	"scripts": {
@@ -80,8 +51,12 @@
 		"build": "tsx ./src/main.ts",
 		"type:check": "tsc ./src/*.ts --noEmit",
 		"lint:check": "eslint ./src",
-		"format:check": "prettier ./src --check"
+		"format:check": "prettier ./src --check",
+    "build:local":"vsce package"
 	},
 	"license": "MIT",
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"es-toolkit": "^1.39.5"
+	}
 }
