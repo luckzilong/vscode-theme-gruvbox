@@ -25,11 +25,11 @@ import { getVSCodeColors } from "./colors/vscode/VSCodeColors";
 
 const variants: Array<[ColorScheme, ColorContrast]> = [
 	["dark", "hard"],
-	["dark", "medium"],
-	["dark", "soft"],
-	["light", "hard"],
-	["light", "medium"],
-	["light", "soft"],
+	// ["dark", "medium"],
+	// ["dark", "soft"],
+	// ["light", "hard"],
+	// ["light", "medium"],
+	// ["light", "soft"],
 ];
 
 const getName = (scheme: ColorScheme, contrast: ColorContrast) =>
